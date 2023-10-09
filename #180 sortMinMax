@@ -1,0 +1,42 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+long long v[1001],maxi=-10000,mini=1000001,MAXI,MINI;
+
+int main()
+{
+    int n,i;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        cin>>v[i];
+        if(maxi<v[i])
+        {
+            maxi=v[i];
+            MAXI=i;
+        }
+        if(mini>v[i])
+        {
+            mini=v[i];
+            MINI=i;
+        }
+    }
+   
+   
+    
+    if(MINI<MAXI)
+    {
+    sort(v+MINI, v+MAXI+1);
+    }
+else
+    {
+    sort(v+MAXI, v+MINI+1);
+    }
+    for(i=1;i<=n;i++)
+    {
+        cout<<v[i]<<" ";
+    }
+
+    return 0;
+}
